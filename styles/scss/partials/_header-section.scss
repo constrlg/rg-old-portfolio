@@ -1,0 +1,94 @@
+@use './colors' as *;
+@use './typography' as *;
+@use './breakpoints' as *;
+
+#header-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header-container {
+        padding-top: 150px;
+        text-align: center;
+        width: 50%;
+        color: $light-black;
+
+        .hero-content {
+            img {
+                max-width: 70px;
+                border-radius: 50%;
+            }
+
+            .hero-text-title {
+                color: $primary-color;
+            }
+
+            .hero-text-desc {
+                font-size: 13px;
+                margin-top: 10px;
+            }
+
+            .scroll-down {
+                font-size: 10px;
+                margin-top: 20px;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 300px;
+                    background-color: $light-black;
+                    margin: 5px auto;
+                }
+            }
+
+
+        }
+    }
+}
+
+
+@include desktop {
+    #header-section {
+        .header-container {
+            width: 50%;
+        }
+    }
+}
+
+@include laptop {
+    #header-section {
+        .header-container {
+            width: 80%;
+        }
+    }
+}
+
+@include tablet {
+    #header-section {
+        .header-container {
+            width: 80%;
+            padding-top: 120px;
+
+        }
+    }
+}
+
+@include mobile {
+    #header-section {
+        .header-container {
+            width: 90%;
+            padding-top: 120px;
+
+            .hero-content {
+                .hero-text-title {
+                    font-size: 14px;
+                }
+
+                .hero-text-desc {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use './colors' as *;
+@use './breakpoints' as *;
+
+#footer-section {
+    .footer-container {
+        text-align: center;
+        padding: 50px 0;
+
+        .copyright {
+            color: $light-black;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .footer-social-media-list-container {
+            .footer-social-media-list-item-link {
+                color: $light-black;
+                font-size: 20px;
+                margin-right: 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    #footer-section {
+        .footer-container {
+            padding: 50px 0 100px 0;
+        }
+    }
+}
+
+@include mobile {
+    #footer-section {
+        .footer-container {
+            padding: 50px 0 100px 0;
+        }
+    }
+}

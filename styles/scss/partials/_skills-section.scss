@@ -1,0 +1,55 @@
+@use './colors' as *;
+@use './breakpoints' as *;
+
+#skills-section {
+
+    .skills-container {
+        width: 80%;
+        padding: 100px 0;
+        margin: 0 auto;
+        text-align: center;
+
+        .skills-title {
+            color: $primary-color;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 50px;
+
+            .skills-item {
+                margin-bottom: 30px;
+
+                .skills-item-img {
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    #skills-section {
+        .skills-container {
+            padding: 20px 0;
+
+            .skills-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@include mobile {
+    #skills-section {
+        .skills-container {
+            padding: 20px 0;
+            width: 90%;
+
+            .skills-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}

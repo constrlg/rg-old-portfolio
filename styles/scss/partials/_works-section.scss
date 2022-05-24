@@ -1,0 +1,53 @@
+@use './colors' as *;
+@use './breakpoints' as *;
+
+#works-section {
+    padding-top: 100px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    .works-title {
+        color: $primary-color;
+    }
+
+    .works-desc {
+        color: $light-black;
+        font-size: 13px;
+    }
+
+    .works-container {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+
+        .works-item {
+            .works-item-img {
+                height: 100%;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    #works-section {
+        padding-top: 20px;
+    }
+}
+
+@include mobile {
+    #works-section {
+        padding-top: 20px;
+
+        .works-desc {
+            font-size: 12px;
+        }
+
+        .works-container {
+            grid-template-columns: 1fr;
+        }
+    }
+}
